@@ -1,0 +1,1 @@
+export const link = "http://localhost:7585/api"
