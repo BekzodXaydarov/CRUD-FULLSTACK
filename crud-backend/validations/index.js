@@ -1,4 +1,4 @@
-const { UserSchema } = require("./schemas")
+const { AdminSchema, AdminLoginSchema } = require("./schemas")
 
 const Validate = (schema, req, res) => {
     const { error } = schema.validate(req.body)
@@ -7,6 +7,7 @@ const Validate = (schema, req, res) => {
     }
 }
 
-const UserValidation = (req, res) => Validate(UserSchema, req, res)
+const AdminValidation = (req, res) => Validate(AdminSchema, req, res)
+const AdminLoginValidation = (req, res) => Validate(AdminLoginSchema, req, res)
 
-module.exports = { UserValidation }
+module.exports = { AdminValidation, AdminLoginValidation }

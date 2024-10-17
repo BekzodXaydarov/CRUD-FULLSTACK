@@ -8,7 +8,7 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
-const user = require("./routes/user.route")
+const user = require("./routes/admin.route")
 app.use("/api",user)
 
 const PORT = process.env.PORT || 7585

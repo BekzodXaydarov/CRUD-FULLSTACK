@@ -42,6 +42,21 @@ nav button:hover {
   transform: translateY(-5px);
 }
 
+nav .btn-logOut {
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid red;
+}
+nav .btn-logOut:hover {
+  background-color: red;
+}
+nav div {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
 .dark nav {
   box-shadow: 0px 0px 50px 0px white;
 }
@@ -76,7 +91,6 @@ nav button:hover {
   align-items: start;
   flex-direction: column;
   width: 500px;
-  /* box-shadow: 0px 0px 30px 0px white; */
   border-radius: 15px;
   padding: 15px;
 }

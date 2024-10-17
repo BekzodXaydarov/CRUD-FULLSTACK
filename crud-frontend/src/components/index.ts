@@ -1,6 +1,9 @@
-import CreateUser from "./CreateUser";
+import CreateAdmin from "./CreateAdmin";
+import Login from "./Login";
+import Main from "./Main";
 import Navbar from "./Navbar";
 import Table from "./Table";
-import UpdateUser from "./UpdateUser";
+import UpdateAdmin from "./UpdateAdmin";
 
-export { Navbar, Table, CreateUser, UpdateUser }
+
+export { Navbar, Table, CreateAdmin, UpdateAdmin,Login,Main }

@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit"
 import DarkMode from "./slices/darkMode.slice"
 import { IStore } from "../types"
-import User from "./slices/user.slice"
+import User from "./slices/admin.slice"
 import Iscreate from "./slices/isCreate.slice"
 
 const store = configureStore<IStore>({

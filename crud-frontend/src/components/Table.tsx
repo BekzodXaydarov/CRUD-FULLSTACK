@@ -2,19 +2,25 @@ import axios from "axios"
 import { link } from "../utils"
 import { toast } from "react-toastify"
 import { IFunctionProp, IUser } from "../types"
-import { useUser } from "../store/useSelector"
+import { useToken, useUser } from "../store/useSelector"
 import { useDispatch } from "react-redux"
-import { updateUser } from "../store/slices/user.slice"
+import { updateAdmin } from "../store/slices/admin.slice"
 import { setIscreate } from "../store/slices/isCreate.slice"
 
 
-const Table = (props:IFunctionProp) => {
+const Table = (props: IFunctionProp) => {
   const data: IUser[] = useUser()
   const dispatch = useDispatch()
+  const token = useToken()
 
   const handleDelete = async (id: number) => {
     try {
-      await axios.delete(link + "/user/" + id)
+      await axios.delete(link + "/admin/" + id, {
+        headers: {
+          token: token,
+          'Content-Type': 'application/json'
+        }
+      })
       toast.dark("user deleted")
       props.fetchData()
     }
@@ -23,15 +29,15 @@ const Table = (props:IFunctionProp) => {
     }
   }
 
-  const handleUpdate = async (user:IUser)=>{
-    try{
-      dispatch(updateUser(user))
+  const handleUpdate = async (user: IUser) => {
+    try {
+      dispatch(updateAdmin(user))
       dispatch(setIscreate(false))
     }
-    catch (error:any) {
+    catch (error: any) {
       toast.error(error.message || "Error")
     }
-  }  
+  }
 
   return (
     <table>
